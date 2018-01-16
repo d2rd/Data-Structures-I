@@ -1,5 +1,7 @@
 /* eslint-disable class-methods-use-this */
-/* eslint-disablle no-trailing-spaces */
+/* eslint-disable no-trailing-spaces */
+/* eslint-diable */
+
 class LinkedList {
   constructor() {
     this.head = null;
@@ -39,15 +41,35 @@ class LinkedList {
         return head.value;
     }
     const head = this.head;
-    this.head = this .head.next;
-    return head.value;
+    this.head = this.head.next;
+    return head.value;  //see what happens then change head.value to value
   }
 
   // Checks the linked list for the given value
   // Returns true if the the value is found in the list, false otherwise
-  contains(value) {
-
+  contains(value) {  //iterative method
+    let node = this.head;
+    while (node !== null) {
+      if (node.value === value) return true; // iterates along linked list
+      node = node.next;
+    }
+    return false;
   }
+
+containsRecursive(value) {
+    // check if the linked list is empty
+    if (this.head === null) return false;
+    // otherwise, define our recursive function
+    const searchLinkedList = (node) => {
+      // check if the current node's value matches what we're looking for 
+       if (node.value === value) return true;
+       //check if we've reached end of the linked list
+       if (node.next === null) return false;       
+    // make our recursive call
+    return searchLinkedList(node.next);
+    };
+    return searchLinkedList(this.head);    
+  }  
 }
 
 module.exports = LinkedList;

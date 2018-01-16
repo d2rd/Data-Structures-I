@@ -5,7 +5,10 @@
   4. Add a `pop` method that removes the most recently-added item to the stack
 */
 class Stack {
-
+// Add a constructor with a storage structure;
+let stack = [];
+// Add a size getter that returns the number of items the stack is storing
+getCallStackSize()
 }
 
 module.exports = Stack;
