@@ -20,12 +20,12 @@ class LimitedArray {
     }
   }
   // Use this getter function to fetch elements from this class
-  get(index) {
+  get(index) {  // THIS IS NOT A GETTER this is a method named 'get' 
     this.checkLimit(index);
     return this.storage[index];
   }
 
-  get length() {
+  get length() {  // this is a getter because it uses the 'get ' keyword (the space indicates its a separate keyword)
     return this.storage.length;
   }
   // Use this setter function to add elements to this class
