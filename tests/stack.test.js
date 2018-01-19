@@ -1,26 +1,27 @@
 /* eslint-disable no-undef, no-prototype-builtins */
-const Stack = require('../src/stack');
+const Stack = require('../src/stack');  // requires source code stack.js
 
-let stack;
+let stack;  // creates variable named 'stack' (case sensitive uppercase "S" indicates class lowercase "s" is a variable)
 
+// invoke test suite
 describe('Stack', () => {
   beforeEach(() => {
-    stack = new Stack();
+    stack = new Stack();  // creates new instance of Stack class (?? new instance before each test or single instance for test suite?)
   });
 
   it('should have the methods "push", "pop", and the property "size"', () => {
-    const hasPush = Object.getPrototypeOf(stack).hasOwnProperty('push');
-    const hasPop = Object.getPrototypeOf(stack).hasOwnProperty('pop');
-    const hasSize = Object.getPrototypeOf(stack).hasOwnProperty('size');
-    expect(hasPush).toBe(true);
-    expect(hasPop).toBe(true);
-    expect(hasSize).toBe(true);
+    const hasPush = Object.getPrototypeOf(stack).hasOwnProperty('push');  // checks code for presence 'push' property
+    const hasPop = Object.getPrototypeOf(stack).hasOwnProperty('pop');  // checks code for presence 'pop' property
+    const hasSize = Object.getPrototypeOf(stack).hasOwnProperty('size');  // checks code for presence 'size' property
+    expect(hasPush).toBe(true);  // verifies 'push' property is present
+    expect(hasPop).toBe(true);  // verifies  'pop' property is present
+    expect(hasSize).toBe(true); // verifies 'size' property is present
   });
-
+  // checks that new instance of stack is empty
   it('should return a size of 0 for a new stack', () => {
     expect(stack.size).toBe(0);
   });
-
+  // push 10 values of 'null' onto the stack
   it('should return a size of 10 after pushing 10 items to the stack', () => {
     stack.push(null);
     stack.push(null);
@@ -32,7 +33,7 @@ describe('Stack', () => {
     stack.push(null);
     stack.push(null);
     stack.push(null);
-    expect(stack.size).toBe(10);
+    expect(stack.size).toBe(10);  // verify that stack has 10 values
   });
 
   it('should not error when attempting to pop an item from an empty stack', () => {

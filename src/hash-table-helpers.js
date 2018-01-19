@@ -20,7 +20,7 @@ class LimitedArray {
     }
   }
   // Use this getter function to fetch elements from this class
-  get(index) {  // THIS IS NOT A GETTER this is a method named 'get' 
+  get(index) {  // THIS IS NOT A GETTER this is a method named 'get'
     this.checkLimit(index);
     return this.storage[index];
   }
